@@ -1,6 +1,6 @@
 package com.sesac.aibackend.service;
 
-//import com.sesac.aibackend.util.MessageFormatter;
+import com.sesac.aibackend.util.MessageFormatter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor // 필수 의존성 주입
 public class GreetingService {
 
-//    private final MessageFormatter formatter;
+    private final MessageFormatter formatter;
 
     public String hello(String name) {
-//        return formatter.format(name);
-        return "[INFO] Hello, " + name + "!";
+        return formatter.format(name);
     }
 }
