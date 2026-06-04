@@ -2,7 +2,7 @@ package com.sesac.aibackend.domain;
 
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -17,5 +17,5 @@ public class Movie {
 
     private String title;
 
-    private Date releaseDate;
+    private LocalDate releaseDate;
 }
