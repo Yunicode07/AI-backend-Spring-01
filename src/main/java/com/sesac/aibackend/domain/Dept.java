@@ -19,10 +19,10 @@ public class Dept {
 
     // 부서명
     @Column(nullable = false, length = 100)
-    private String deptname;
+    private String deptName;
 
     // 인원수
-    @Column(nullable = false, length = 3)
+    @Column(nullable = false)
     private int personCount;
 
 }

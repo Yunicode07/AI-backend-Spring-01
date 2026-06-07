@@ -24,7 +24,7 @@ public class Staff {
             nullable = false,
             length = 10
     )
-    private int empno;
+    private int empNo;
 
     // 직원 명
     @Column(nullable = false, length = 20)
