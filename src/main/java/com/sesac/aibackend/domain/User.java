@@ -62,4 +62,29 @@ public class User {
                 .providerId(providerId) // OAuth 인증 식별자
                 .build();
     }
+    /**
+     * 역할 변경 도메인 메서드.
+     *
+     * Lombok @Setter를 두지 않고 의도된 메서드만 노출해 캡슐화를 유지합니다.
+     * 값 검증은 입력 경계에서 enum 타입(RoleUpdateRequest.role)으로 강제됩니다.
+     */
+    public void changeRole(Role role) {
+        this.role = role;
+    }
+
+    /**
+     * ChatLog → User 방향만 사용하는 단방향 연관관계.
+     *
+     * 현재는 User에서 ChatLog 목록을 조회할 요구사항이 없어
+     * 불필요한 양방향 매핑을 추가하지 않습니다.
+     *
+     * 향후 "특정 사용자의 모든 대화 내역 조회" 기능이 필요해지면
+     * 아래 @OneToMany 매핑을 활성화할 수 있습니다.
+     *
+     * 참고:
+     * - FK(외래키) 주인은 ChatLog의 @ManyToOne(user) 측입니다.
+     * - User 측은 조회 편의를 위한 역방향 매핑입니다.
+     */
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<ChatLog> chatLogs = new ArrayList<>();
 }
